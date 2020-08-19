@@ -9,19 +9,22 @@ Prerequisites:
 How to run the workflow
 ==
 
-   1)  create workflow in github.com
-         - requires to have a .nf file + nextflow.config file in root dir
+1)  create workflow in github.com
+    At first, create a workflow in github; remember: a workflow requires to have a .nf file + nextflow.config file in root dir
 
-   2) pull workflow + revision
+2) pull workflow + revision
+```
+    nextflow pull tweep/nextflow-wf-example  -r feature/v0.0.1
+```
 
-        nextflow pull tweep/nextflow-wf-example  -r feature/v0.01 
+3) get help message 
+```
+    nextflow run tweep/nextflow-wf-example --help
+```
 
-   3) get help message 
-
-        nextflow run tweep/nextflow-wf-example --help   
-
-   4) Run workflow 
-
-     nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello text to cuppercase" -profile slurm -resume 
+4) Run workflow 
+```
+    nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello text to cuppercase" -profile slurm -resume 
+```
 
 

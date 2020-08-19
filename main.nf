@@ -7,22 +7,25 @@
 def helpMessage() {
     log.info"""
     ================================================================
-    virus-detection-nf
+    nextflow-wf-example
     ================================================================
     DESCRIPTION
     Usage:
-    nextflow run t-neumann/salmon-nf
+
+    nextflow pull tweep/nextflow-wf-example
+    nextflow clone tweep/nextflow-wf-example
+    
     Options:
         --inputDir            Input directory of fastq files.
         --outputDir            Output folder for salmon quantification files.
     Profiles:
         standard            local execution
-        ii2                 SLURM execution with singularity on IMPIMBA2
+        slurm               SLURM execution with singularity on ROSALIND
         aws                 SLURM execution with Docker on AWS
     Docker:
-    obenauflab/salmon:latest
+    N/A
     Author:
-    Tobias Neumann (tobias.neumann@imp.ac.at)
+    Jan Vogel
     """.stripIndent()
 }
 

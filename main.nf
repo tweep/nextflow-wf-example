@@ -11,13 +11,18 @@ def helpMessage() {
     ================================================================
     DESCRIPTION
     Usage:
-
+    
+    mkdir run
+    cd  run 
     nextflow pull tweep/nextflow-wf-example
     nextflow clone tweep/nextflow-wf-example
+    nextflow run tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir --string "hello jan" results -profile slurm
     
     Options:
         --inputDir            Input directory of fastq files.
-        --outputDir            Output folder for salmon quantification files.
+        --outputDir           Output folder for salmon quantification files.
+        --string              Text to uppercase in Worfklow (string)
+        
     Profiles:
         standard            local execution
         slurm               SLURM execution with singularity on ROSALIND
@@ -46,7 +51,7 @@ log.info " Worfklow parameters "
 log.info " ======================"
 log.info " input directory          : ${params.inputDir}"
 log.info " output directory         : ${params.outputDir}"
-log.info " input string             : ${params.str}"
+log.info " input string             : ${params.string}"
 log.info " ======================"
 log.info ""
 

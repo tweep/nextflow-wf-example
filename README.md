@@ -17,11 +17,11 @@ How to run the workflow
         nextflow pull tweep/nextflow-wf-example  -r feature/v0.0.1
 
 3) get help message 
-```
-        nextflow run tweep/nextflow-wf-example --help   
+      ```
+        nextflow run tweep/nextflow-wf-example --help
 
 4) Run workflow 
-```
-     nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello text to cuppercase" -profile slurm -resume 
+    ```
+       nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello text to cuppercase" -profile slurm -resume 
 
 

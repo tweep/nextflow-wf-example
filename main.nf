@@ -14,7 +14,7 @@ def helpMessage() {
     
     Pull branch or tag v0.01 and print help message: 
     
-          nextflow pull  tweep/nextflow-wf-example -r feature/v0.01
+          nextflow pull  tweep/nextflow-wf-example -r feature/v0.0.1
 
           nextflow run tweep/nextflow-wf-example --help   
     

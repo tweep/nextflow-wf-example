@@ -14,7 +14,7 @@ How to run the workflow
 
    2) pull workflow + revision
 
-        nextflow pull tweep/nextflow-wf-example  -r feature/v0.01 
+        nextflow pull tweep/nextflow-wf-example  -r feature/v0.0.1
 
    3) get help message 
 

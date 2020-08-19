@@ -10,7 +10,7 @@ How to run the workflow
 ==
 
 1)  create workflow in github.com
-     - requires to have a .nf file + nextflow.config file in root dir
+    At first, create a workflow in github; remember: a workflow requires to have a .nf file + nextflow.config file in root dir
 
 2) pull workflow + revision
 ```

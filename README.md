@@ -13,11 +13,11 @@ How to run the workflow
          - requires to have a .nf file + nextflow.config file in root dir
 
    2) pull workflow + revision
-
+     ```
         nextflow pull tweep/nextflow-wf-example  -r feature/v0.0.1
 
    3) get help message 
-
+      ```
         nextflow run tweep/nextflow-wf-example --help   
 
    4) Run workflow 

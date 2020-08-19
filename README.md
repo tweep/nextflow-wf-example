@@ -2,28 +2,26 @@
 Example Nextflow workflow via git / slurm 
 == 
 
-How to run
+Prerequisites: 
+ - workflow hosted on github 
+
+
+How to run the workflow
 ==
 
-   - create workflow in github.com
+   1)  create workflow in github.com
+         - requires to have a .nf file + nextflow.config file in root dir
 
-   - pull workflow :
+   2) pull workflow + revision
 
-     nextflow pull tweep/nextflow-wf-example  
-     nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results -profile slurm -resume 
+        nextflow pull tweep/nextflow-wf-example  -r feature/v0.01 
 
-tweep/nextflow-wf-example has finished.
-Status:   SUCCESS
-Time:     Sun Aug 25 23:35:49 CEST 2019
-Duration: 2m
+   3) get help message 
 
+        nextflow run tweep/nextflow-wf-example --help   
 
+   4) Run workflow 
 
-  - Nextflow runs the workflow
-  - afer successful run we got this :
+     nextflow run  tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello text to cuppercase" -profile slurm -resume 
 
-
-
-
-    report.html  results  timeline.html
 

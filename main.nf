@@ -12,11 +12,18 @@ def helpMessage() {
     DESCRIPTION
     Usage:
     
-    mkdir run
-    cd  run 
-    nextflow pull tweep/nextflow-wf-example
-    nextflow clone tweep/nextflow-wf-example
-    nextflow run tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir --string "hello jan" results -profile slurm
+    Pull branch or tag v0.01 and print help message: 
+    
+          nextflow pull  tweep/nextflow-wf-example -r feature/v0.01
+
+          nextflow run tweep/nextflow-wf-example --help   
+    
+    Run Workflow:
+      mkdir run
+      cd  run 
+      nextflow pull  tweep/nextflow-wf-example
+      nextflow clone tweep/nextflow-wf-example
+      nextflow run   tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir --string "hello jan" results -profile slurm
     
     Options:
         --inputDir            Input directory of fastq files.

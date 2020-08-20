@@ -23,12 +23,13 @@ def helpMessage() {
       cd  run 
       nextflow pull  tweep/nextflow-wf-example
       nextflow clone tweep/nextflow-wf-example
-      nextflow run   tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir --string "hello jan" results -profile slurm
+      nextflow run   tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello jan" --pipeName vogelj4_pipe_1  -profile slurm
     
     Options:
         --inputDir            Input directory of fastq files.
         --outputDir           Output folder for salmon quantification files.
         --string              Text to uppercase in Worfklow (string)
+        --pipeName            Pipeline name ( used as job name for slurm)
         
     Profiles:
         standard            local execution
@@ -59,6 +60,7 @@ log.info " ======================"
 log.info " input directory          : ${params.inputDir}"
 log.info " output directory         : ${params.outputDir}"
 log.info " input string             : ${params.string}"
+log.info " pipeName                 : ${params.pipeName}"
 log.info " ======================"
 log.info ""
 
@@ -66,20 +68,22 @@ log.info ""
 
 
 
-params.str = 'Hello world!'
+params.string = 'Hello world!'
 
 process splitLetters {
+  label 'short_queue'
 
     output:
     file 'chunk_*' into letters
 
     """
-    printf '${params.str}' | split -b 6 - chunk_
+    printf '${params.string}' | split -b 6 - chunk_
     """
 }
 
 
 process convertToUpper {
+  label 'short_queue'
 
     input:
     file x from letters.flatten()

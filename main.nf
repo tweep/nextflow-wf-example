@@ -23,14 +23,14 @@ def helpMessage() {
       cd  run 
       nextflow pull  tweep/nextflow-wf-example
       nextflow clone tweep/nextflow-wf-example
-      nextflow run   tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello jan" --pipeName vogelj4_pipe_1  -profile slurm
+      nextflow run   tweep/nextflow-wf-example  --inputDir /tmp/data --outputDir results --string "hello jan" --username vogelj4 -profile slurm
     
     Options:
         --inputDir            Input directory of fastq files.
         --outputDir           Output folder for salmon quantification files.
         --string              Text to uppercase in Worfklow (string)
-        --pipeName            Pipeline name ( used as job name for slurm)
-        
+        --username            user name (used for naming SLURM jobs) 
+
     Profiles:
         standard            local execution
         slurm               SLURM execution with singularity on ROSALIND
@@ -60,7 +60,7 @@ log.info " ======================"
 log.info " input directory          : ${params.inputDir}"
 log.info " output directory         : ${params.outputDir}"
 log.info " input string             : ${params.string}"
-log.info " pipeName                 : ${params.pipeName}"
+log.info " username                 : ${params.username}"
 log.info " ======================"
 log.info ""
 

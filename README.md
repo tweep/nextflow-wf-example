@@ -13,10 +13,14 @@ How to run the workflow
     At first, create a workflow in github; remember: a workflow requires to have a .nf file + nextflow.config file in root dir
 
 2) *clone*  workflow + revision
-Note: we clone the workflow to write it to a specific directory. We do not want to *pull* the workflow, this would 
+Notes: 
+  - we clone the workflow to write it to a specific directory. We do not want to *pull* the workflow, this would 
 write the WF into our $HOME directory - let's not clutter that one up. 
+  - the target directory ($HOME/runWF) has to be emtpy !
 
-```
+```  
+   # target dir has to be empty
+    rm -rf $HOME/runWF
     nextflow clone tweep/nextflow-wf-example  -r feature/v0.0.1   $HOME/runWF
 ```
 
